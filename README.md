@@ -30,4 +30,4 @@ More flexible in pattern matching
 Can explore multiple paths simultaneously
 Typically requires more complex implementation
 
-Due to thiese reasons I used FDA.
+Due to thEese reasons I used FDA.
