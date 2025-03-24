@@ -51,5 +51,16 @@ Where:
 -Anything else → Rejected
 
 This automaton starts at state q0. It moves through different states based on the input characters.
-The state transitiones in prolog are the ones using the word "move"; ''' accepting_state(f1). '''
+The state transitiones in prolog are the ones using the word "move"; ```accepting_state(f1). ```
+identifies that the finishing state is "f1" and 
+```go_over_automaton(ListToCheck) :-
+    automatonCheck(ListToCheck, q0).
+
+automatonCheck([], State) :-
+    accepting_state(State).
+
+automatonCheck([Symbol | Rest], State) :-
+    move(State, NextState, Symbol),
+    automatonCheck(Rest, NextState).```
+
 
