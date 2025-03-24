@@ -9,7 +9,25 @@ Este idioma no fue creado con letras o palabras al azar, todo tiene un motivo y 
 
 
 
-
-
-
 Shachat, S. (2024, 1 marzo). IndieWire. IndieWire. https://www.indiewire.com/features/craft/dune-fremen-langauge-how-to-speak-1234958145/ 
+
+
+Key differences between DFA and NFA:
+
+DFA (Deterministic Finite Automaton):
+
+Only one possible state transition for each input
+Easier to implement
+Requires less memory
+Always has a unique path for recognition
+
+
+NFA (Nondeterministic Finite Automaton):
+
+Multiple possible state transitions for the same input
+Can have epsilon transitions (transitions without consuming input)
+More flexible in pattern matching
+Can explore multiple paths simultaneously
+Typically requires more complex implementation
+
+Due to thiese reasons I used FDA.
