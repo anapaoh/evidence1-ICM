@@ -40,4 +40,4 @@ MODEL:
 
 this is equivalent to the following regular expression: k(hala|indjal|iswa|uhar|vetch)
 
-##Implementation
+## Implementation
