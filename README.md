@@ -29,7 +29,7 @@ Shachat, S. (2024, 1 marzo). IndieWire. IndieWire. https://www.indiewire.com/fea
 + Can explore multiple paths simultaneously
 + Typically requires more complex implementation
 
-Due to theese reasons I used FDA.
+Due to theese reasons I used DFA.
 
 
 MODEL:
