@@ -72,3 +72,37 @@ What ocurrs here is the following:
 -If the automaton reaches an accepting state (f1), the word is recognized.
 
 
+## Test
+
+The following tests were made in order to confirm the veracity of this work, the resuts were as it follows:
+
+```
+?- test_kalah.
+Testing "khala", true
+true.
+```
+
+```
+?- test_hello.
+hello
+Testinf "hello", false
+false.
+```
+
+```
+?- test_kindjal.
+Testing "kindjal, true
+true.
+```
+
+```
+?- test_kindjal2.
+Testing "Kindjal", false
+false.
+```
+
+```
+?- test_kvilth.
+Testing "kvilth", false
+false.
+```
