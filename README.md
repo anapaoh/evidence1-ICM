@@ -42,10 +42,15 @@ This is equivalent to the following regular expression:  _k(hala|indjal|iswa|uha
 Where: 
 
 -khala → Valid
+
 -kindjal → Valid
+
 -kiswa → Valid
+
 -kuhar → Valid
+
 -kvetch → Valid
+
 -Anything else → Rejected
 
 This automaton starts at state q0. It moves through different states based on the input characters.
