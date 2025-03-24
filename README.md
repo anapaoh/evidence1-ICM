@@ -41,3 +41,15 @@ MODEL:
 this is equivalent to the following regular expression: k(hala|indjal|iswa|uhar|vetch)
 
 ## Implementation
+Where: 
+
+-khala → Valid
+-kindjal → Valid
+-kiswa → Valid
+-kuhar → Valid
+-kvetch → Valid
+-Anything else → Rejected
+
+This automaton starts at state q0. It moves through different states based on the input characters.
+The state transitiones in prolog are the ones using the word "move"; ''' accepting_state(f1). '''
+
