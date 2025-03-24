@@ -7,9 +7,6 @@ The Chakobsa language ( šhə-k'oa-bza) is a language used by the medieval Circa
 
 This language was not created with random letters or words, everything has a reason and a history. The Petersons, who were the linguists of these films, took care of that. The language has a complex and detailed grammatical structure, which is responsible for telling the struggle, resistance and power with which the Circassians have led their people throughout history. What happens is that it ceases to be an invented language and becomes a style of telling the stories of thousands of people who, willingly or not, had their own languages represented in this language. Being that its inspiration were languages of the “real world”, it becomes a language of all, the story of people throughout our humanity. This is how Chakobsa becomes a representation of Arabic, French, Greek, Romani and other histories.
 
-Translated with DeepL.com (free version)
-
-
 Shachat, S. (2024, 1 marzo). IndieWire. IndieWire. https://www.indiewire.com/features/craft/dune-fremen-langauge-how-to-speak-1234958145/ 
 
 
@@ -65,7 +62,9 @@ automatonCheck([Symbol | Rest], State) :-
     automatonCheck(Rest, NextState).
 ```
 is the Automaton Function for Word Recognition. 
+
 What ocurrs here is the following:
+
 -The function go_over_automaton/1 starts at state q0.
 
 -It processes the input one character at a time using move/3.
