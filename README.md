@@ -53,7 +53,8 @@ Where:
 This automaton starts at state q0. It moves through different states based on the input characters.
 The state transitiones in prolog are the ones using the word "move"; ```accepting_state(f1). ```
 identifies that the finishing state is "f1" and 
-```go_over_automaton(ListToCheck) :-
+```
+go_over_automaton(ListToCheck) :-
     automatonCheck(ListToCheck, q0).
 
 automatonCheck([], State) :-
@@ -61,6 +62,14 @@ automatonCheck([], State) :-
 
 automatonCheck([Symbol | Rest], State) :-
     move(State, NextState, Symbol),
-    automatonCheck(Rest, NextState).```
+    automatonCheck(Rest, NextState).
+```
+is the Automaton Function for Word Recognition. 
+What ocurrs here is the following:
+-The function go_over_automaton/1 starts at state q0.
+
+-It processes the input one character at a time using move/3.
+
+-If the automaton reaches an accepting state (f1), the word is recognized.
 
 
