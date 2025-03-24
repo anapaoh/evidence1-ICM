@@ -35,7 +35,7 @@ MODEL:
 
 ![q0](https://github.com/user-attachments/assets/bac08fe0-3ba8-4b0f-94b7-9f9a560b46bc)
 
-this is equivalent to the following regular expression: ** k(hala|indjal|iswa|uhar|vetch) **
+this is equivalent to the following regular expression:  _k(hala|indjal|iswa|uhar|vetch)_
 
 ## Implementation
 Where: 
