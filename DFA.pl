@@ -50,7 +50,7 @@ test_kindjal:-
     write('Testing "kindjal, true"'), nl,
     go_over_automaton(['k', 'i', 'n', 'd', 'j', 'a', 'l']).
 
-test_kindjal:-
+test_kindjal2:-
     write('Testing "Kindjal", false'), nl,
     go_over_automaton(['K', 'i', 'n', 'd', 'j', 'a', 'l']).
 
@@ -72,4 +72,4 @@ test_kvetch:-
 
 test_kvotch:-
     write('Testing "kvotch", false'), nl,
-    go_over_automaton(['K', 'v', 'o', 't', 'c', 'h']). 
+    go_over_automaton(['K', 'v', 'o', 't', 'c', 'h']).
