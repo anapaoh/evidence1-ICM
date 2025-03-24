@@ -3,10 +3,11 @@ E1 Implementation of Lexical Analysis (Automaton and Regular Expression)
 
 
 ## Chakobsa language
-El idioma chakobsa ( šhə-k'oa-bza) es un lenguaje que usaban los circasianos medievales, se cree que es un lenguaje que surgió después de las primeras Guerras de Asesinos, y en sí, " el idioma chakobsa es un The Chakobsa language ( šhə-k'oa-bza) is a language used by the medieval Circassians, believed to be a language that emerged after the first Assassin Wars, and in itself, “the Chakobsa language is a record that speaks of the experience and perspective of a people living on a desert planet, who value resilience and courage while awaiting a prophesied savior from another world” (Shachat, 2024). On a large scale it is a language used in the Dune movies, but upon analysis it is much more than that.
+The Chakobsa language ( šhə-k'oa-bza) is a language used by the medieval Circassians, believed to be a language that emerged after the first Assassin Wars, and in itself, “the Chakobsa language is a record that speaks of the experience and perspective of a people living on a desert planet, who value resilience and courage while awaiting a prophesied savior from another world” (Shachat, 2024). On a large scale it is a language used in the Dune movies, but upon analysis it is much more than that.
 
 This language was not created with random letters or words, everything has a reason and a history. The Petersons, who were the linguists of these films, took care of that. The language has a complex and detailed grammatical structure, which is responsible for telling the struggle, resistance and power with which the Circassians have led their people throughout history. What happens is that it ceases to be an invented language and becomes a style of telling the stories of thousands of people who, willingly or not, had their own languages represented in this language. Being that its inspiration were languages of the “real world”, it becomes a language of all, the story of people throughout our humanity. This is how Chakobsa becomes a representation of Arabic, French, Greek, Romani and other histories.
 
+Translated with DeepL.com (free version)
 
 
 Shachat, S. (2024, 1 marzo). IndieWire. IndieWire. https://www.indiewire.com/features/craft/dune-fremen-langauge-how-to-speak-1234958145/ 
