@@ -14,19 +14,22 @@ Key differences between DFA and NFA:
 
 DFA (Deterministic Finite Automaton):
 
-Only one possible state transition for each input
-Easier to implement
-Requires less memory
-Always has a unique path for recognition
++ Only one possible state transition for each input
++ Easier to implement
++ Requires less memory
++ Always has a unique path for recognition
 
 
 NFA (Nondeterministic Finite Automaton):
 
-Multiple possible state transitions for the same input
-Can have epsilon transitions (transitions without consuming input)
-More flexible in pattern matching
-Can explore multiple paths simultaneously
-Typically requires more complex implementation
+
++ Multiple possible state transitions for the same input
++ 
++ Can have epsilon transitions (transitions without consuming input)
++ 
++ More flexible in pattern matching
++ Can explore multiple paths simultaneously
++ Typically requires more complex implementation
 
 Due to theese reasons I used FDA.
 
@@ -35,7 +38,7 @@ MODEL:
 
 ![q0](https://github.com/user-attachments/assets/bac08fe0-3ba8-4b0f-94b7-9f9a560b46bc)
 
-this is equivalent to the following regular expression:  _k(hala|indjal|iswa|uhar|vetch)_
+This is equivalent to the following regular expression:  _k(hala|indjal|iswa|uhar|vetch)_
 
 ## Implementation
 Where: 
