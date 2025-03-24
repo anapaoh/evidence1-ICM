@@ -106,3 +106,19 @@ false.
 Testing "kvilth", false
 false.
 ```
+
+## Time Complexity Analysis
+
+The provided code uses a Deterministic Finite Automaton (DFA) to determine whether a word is valid. Below is an analysis of the primary function, go_over_automaton/1, and its computational complexity.
+
+
+# Functionality of go_over_automaton/1
+
+This function takes a list of symbols (characters of a word) and checks whether the automaton accepts or rejects the input. It relies on the recursive function automatonCheck/2, which processes each symbol in the input list sequentially.
+
+
+The automatonCheck/2 function transitions between states using the move/3 predicate, which evaluates the state transitions based on the current input symbol.
+
+
+# Time Complexity
+Each symbol in the input list is processed exactly once. Consequently, the time complexity of this function is O(n), where n represents the length of the input word.
