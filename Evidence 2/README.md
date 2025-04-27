@@ -1,11 +1,15 @@
 ### Evidence 2 ICM
 ## Nahuatl 
 
-Nahuatl is an ancient mexican language. It is known to be spoken since at least the 7th century A.D. and it is quite important in Mexico's history. Aztecs used to speak this language and eventhough spaniards tried to errase it and kill native people when colonization ocurred, both survived.
+Nahuatl: A Living Legacy
+Nahuatl is an ancient Mexican language that has been spoken since at least the 7th century A.D., playing a significant role in the cultural and historical development of the region. It was the language of the Aztecs, one of the most influential civilizations in pre-Columbian Mesoamerica.
 
-Nowadays it is a language that very few poeple speak; yet it is a reminder and beautiful representation of our countiry's origin and the importance of keeping it alive.
+Despite efforts by Spanish colonizers to eradicate native cultures and languages — often through violence and suppression — Nahuatl and its speakers endured. The survival of the language stands as a powerful testament to the resilience of Indigenous identity.
 
-"Varieties of Nahuatl are spoken by an estimated 1.5 million Nahua people, most of whom live in Central Mexico. All Nahuan languages are indigenous to Mesoamerica" (College Of Liberal Arts | The University Of Texas At Austin, s. f.).
+Today, Nahuatl is spoken by approximately 1.5 million Nahua people, primarily in central Mexico. While its number of speakers has declined, Nahuatl remains a beautiful and vital link to Mexico’s ancestral roots, reminding us of the importance of preserving Indigenous languages and honoring the diversity they represent.
+
+“Varieties of Nahuatl are spoken by an estimated 1.5 million Nahua people, most of whom live in Central Mexico. All Nahuan languages are indigenous to Mesoamerica.”
+— College of Liberal Arts | The University of Texas at Austin
 
 
 
