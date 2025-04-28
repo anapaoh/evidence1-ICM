@@ -437,7 +437,7 @@ Derivation:
 - S → Ø ni coch i ihuan Ø ni tequit i
 
 
-  # Analysis of Nahuatl Grammar in Chomsky's Hierarchy
+  ## Analysis of Nahuatl Grammar in Chomsky's Hierarchy
 
 ## Original Grammar Level in Chomsky's Hierarchy
 
