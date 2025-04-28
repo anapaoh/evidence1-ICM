@@ -160,8 +160,8 @@ no- + cal + -li
 [Possessive-Prefix:1SG] + [N_root:house] + [Absolutive-Suffix]
 ```
 
-## Now that we understand the rules for the Na'vi grammar we need to create a tree rule for it, the word we are going to use for the grammar are:
-Verbs:
+#### Now that we understand the rules for the Na'vi grammar we need to create a tree rule for it, the word we are going to use for the grammar are:
+### Verbs:
 * nemi - to live, to walk
 * tlacua - to eat
 * cochi - to sleep
@@ -169,7 +169,7 @@ Verbs:
 * chihua - to make, to do
 * temachtia - to teach
 
-Nouns :
+### Nouns :
 * tlacatl - person, man
 * cihuatl - woman
 * piltzintli - child
@@ -186,7 +186,7 @@ Nouns :
 * metztli - moon
 * cuicatl - song
 
-Conjunctions:
+### Conjunctions:
 * ihuan - and
 * auh - but, and
 * intla - if
