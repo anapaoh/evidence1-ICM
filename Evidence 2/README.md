@@ -110,50 +110,22 @@ V_transitive → nemi | cochi | choca | ...
 V_intransitive → mictia | tlazotla | chihua | ...
 V_stative → ca | neci | ...
 ```
-## 5. Incorporation Rules
-### 5.1 Noun Incorporation
-```
-V_incorporated → [Subject-Prefix] + N_root + V_root + [Tense-Suffix]
-```
-
-### 5.2 Applicative Form
-```
-V_applicative → V_root + -lia | -ia | -huia
-```
-
-### 5.3 Causative Form
-```
-V_causative → V_root + -ltia | -tia
-```
-## 6. Semantic Features
-### 6.1 Difrasismo (Paired Metaphorical Expressions)
-```
-Difrasismo → NP Conj NP
-```
-Examples: in xochitl in cuicatl (flower and song = poetry)
-
-### 6.2 Reverential and Diminutive Forms
-```
-N_reverential → N_root + -tzin | -tzintli
-N_diminutive → N_root + -tontli | -ton
-N_augmentative → N_root + -pol
-```
-## 7. Sample Derivations
-### 7.1 Simple Sentence
+## 5. Sample Derivations
+### 5.1 Simple Sentence
 ```
 "Nitemachtia" (I teach)
 ni- + temachtia
 [Subject-Prefix:1SG] + [V_root:teach]
 ```
 
-### 7.2 Complex Sentence
+### 5.2 Complex Sentence
 ```
 "Nitlakwa ihuan nitlai" (I eat and I drink)
 ni- + tlakwa + ihuan + ni- + tlai
 [Subject-Prefix:1SG] + [V_root:eat] + [Conj:and] + [Subject-Prefix:1SG] + [V_root:drink]
 ```
 
-### 7.3 Noun Possession
+### 5.3 Noun Possession
 ```
 "Nocal" (my house)
 no- + cal + -li
@@ -277,7 +249,8 @@ Q_MARKER → cuix | tlen | aquin | canin  # Question markers
           VP
           |
       V_SIMPLE
-     /    |    \
+      ---------
+     |     |     |
 TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
     |         |       |       |
     Ø         ni     coch     i
