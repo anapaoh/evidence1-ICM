@@ -191,5 +191,250 @@ no- + cal + -li
 * auh - but, and
 * intla - if
 
+# Unambiguous Nahuatl Grammar
+
+## 1. Terminal Symbols
+
+### 1.1 Verbs
+```
+V_ROOT → nemi | tlacua | cochi | tequiti | chihua | temachtia
+```
+
+### 1.2 Nouns
+```
+N_ROOT → tlaca | cihua | piltzin | cal | a | te | cuahui | tlaxcal | xochi | tepe | tlamachtil | teo | tonatiu | metz | cuica
+```
+
+### 1.3 Affixes
+```
+POSS_PREFIX → no | mo | i | to | amo | in
+SUBJ_PREFIX → ni | ti | Ø | an
+OBJ_PREFIX → nech | mitz | k | ki | tech | amech | kin
+TENSE_PREFIX → o | Ø
+ABS_SUFFIX → tl | tli | li | in
+PLUR_SUFFIX → tin | meh | h
+VERB_SUFFIX → a | ya | z | que
+```
+
+### 1.4 Function Words
+```
+DET → in | ce
+CONJ → ihuan | auh | intla
+NEG → amo
+```
+
+## 2. Non-Terminal Symbols and Production Rules
+
+### 2.1 Sentence Structure (Eliminating Ambiguity)
+```
+S → VP NP_OPT NP_OPT PP_OPT             # Base sentence structure
+S → NEG VP NP_OPT NP_OPT PP_OPT         # Negated sentence
+S → S CONJ S                            # Compound sentence
+```
+
+### 2.2 Noun Phrases (Avoiding Left Recursion)
+```
+NP → DET N_FORM                         # Determinative noun phrase
+NP → N_FORM                             # Simple noun phrase
+NP_OPT → NP | ε                         # Optional noun phrase
+
+N_FORM → POSS_PREFIX N_STEM             # Possessed noun
+N_FORM → N_STEM                         # Unpossessed noun
+N_STEM → N_ROOT ABS_SUFFIX              # Singular noun
+N_STEM → N_ROOT PLUR_SUFFIX ABS_SUFFIX  # Plural noun
+```
+
+### 2.3 Verb Phrases (Eliminating Ambiguity)
+```
+VP → V_SIMPLE                           # Simple verb
+VP → V_TRANSITIVE                       # Transitive verb with object prefix
+VP → V_INCORP                           # Verb with incorporated noun
+
+V_SIMPLE → TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
+V_TRANSITIVE → TENSE_PREFIX SUBJ_PREFIX OBJ_PREFIX V_ROOT VERB_SUFFIX
+V_INCORP → TENSE_PREFIX SUBJ_PREFIX N_ROOT V_ROOT VERB_SUFFIX
+```
+
+### 2.4 Prepositional Phrases
+```
+PP → P NP                               # Prepositional phrase
+PP_OPT → PP | ε                         # Optional prepositional phrase
+P → ipan | ica | itech                  # Prepositions
+```
+
+### 2.5 Question Formation (Non-Ambiguous)
+```
+Q → Q_MARKER S                          # Question with marker
+Q_MARKER → cuix | tlen | aquin | canin  # Question markers
+```
+
+## 3. Example Sentences with Syntactic Trees
+
+### Sentence 1: "Nicochi." (I sleep.)
+```
+          S
+          |
+          VP
+          |
+      V_SIMPLE
+     /    |    \
+TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
+    |         |       |       |
+    Ø         ni     coch     i
+```
+
+Derivation:
+- S → VP NP_OPT NP_OPT PP_OPT
+- S → VP ε ε ε
+- S → V_SIMPLE
+- S → TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
+- S → Ø ni coch i
+
+### Sentence 2: "In tlacatl cochi." (The man sleeps.)
+```
+            S
+       /         \
+      VP          NP_OPT
+      |           |
+  V_SIMPLE        NP
+ /    |    \     /  \
+Ø     Ø    cochi DET N_FORM
+                 |     |
+                 in  N_STEM
+                    /     \
+                N_ROOT  ABS_SUFFIX
+                  |        |
+                tlaca      tl
+```
+
+Derivation:
+- S → VP NP_OPT NP_OPT PP_OPT
+- S → VP NP ε ε
+- S → V_SIMPLE NP
+- S → Ø Ø cochi DET N_FORM
+- S → Ø Ø cochi in N_STEM
+- S → Ø Ø cochi in N_ROOT ABS_SUFFIX
+- S → Ø Ø cochi in tlaca tl
+
+### Sentence 3: "Nictlaxcalchihua." (I make tortillas./I tortilla-make.)
+```
+          S
+          |
+          VP
+          |
+      V_INCORP
+    /     |      \
+TENSE_PREFIX SUBJ_PREFIX N_ROOT V_ROOT VERB_SUFFIX
+    |         |       |      |       |
+    Ø         ni    tlaxcal chihua    a
+```
+
+Derivation:
+- S → VP NP_OPT NP_OPT PP_OPT
+- S → VP ε ε ε
+- S → V_INCORP
+- S → TENSE_PREFIX SUBJ_PREFIX N_ROOT V_ROOT VERB_SUFFIX
+- S → Ø ni tlaxcal chihua a
+
+### Sentence 4: "In cihuatl quicua in tlaxcalli." (The woman eats the tortilla.)
+```
+                   S
+        /          |          \
+       VP          NP_OPT      NP_OPT
+       |           |            |
+  V_TRANSITIVE     NP           NP
+ /    |     \     /  \         /  \
+Ø     Ø    qui  DET N_FORM    DET N_FORM
+      |     |    |    |        |    |
+      Ø    cua  in  N_STEM    in  N_STEM
+                   /    \        /    \
+                N_ROOT ABS_SUFFIX N_ROOT ABS_SUFFIX
+                  |       |        |       |
+                cihua     tl     tlaxcal   li
+```
+
+Derivation:
+- S → VP NP_OPT NP_OPT PP_OPT
+- S → VP NP NP ε
+- S → V_TRANSITIVE NP NP
+- S → TENSE_PREFIX SUBJ_PREFIX OBJ_PREFIX V_ROOT VERB_SUFFIX NP NP
+- S → Ø Ø qui cua Ø DET N_FORM DET N_FORM
+- S → Ø Ø qui cua Ø in N_STEM in N_STEM
+- S → Ø Ø qui cua Ø in N_ROOT ABS_SUFFIX in N_ROOT ABS_SUFFIX
+- S → Ø Ø qui cua Ø in cihua tl in tlaxcal li
+
+### Sentence 5: "Nitequiti ipan calli." (I work in the house.)
+```
+                S
+        /       |       \
+       VP     NP_OPT    PP_OPT
+       |        |         |
+   V_SIMPLE     ε         PP
+  /   |    \             /  \
+ Ø    ni tequiti        P    NP
+                        |     |
+                      ipan  N_FORM
+                             |
+                           N_STEM
+                           /    \
+                       N_ROOT ABS_SUFFIX
+                         |       |
+                        cal      li
+```
+
+Derivation:
+- S → VP NP_OPT NP_OPT PP_OPT
+- S → VP ε ε PP
+- S → V_SIMPLE ε ε PP
+- S → TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX ε ε P NP
+- S → Ø ni tequiti ti ε ε ipan N_FORM
+- S → Ø ni tequiti ti ε ε ipan N_STEM
+- S → Ø ni tequiti ti ε ε ipan N_ROOT ABS_SUFFIX
+- S → Ø ni tequiti ti ε ε ipan cal li
+
+### Sentence 6: "Cuix ticochi?" (Do you sleep?)
+```
+       Q
+     /   \
+Q_MARKER   S
+   |       |
+ cuix      VP
+           |
+       V_SIMPLE
+      /   |    \
+TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
+     |        |       |      |
+     Ø        ti     coch    i
+```
+
+Derivation:
+- Q → Q_MARKER S
+- Q → cuix VP NP_OPT NP_OPT PP_OPT
+- Q → cuix VP ε ε ε
+- Q → cuix V_SIMPLE
+- Q → cuix TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
+- Q → cuix Ø ti coch i
+
+### Sentence 7: "Nicochi ihuan nitequiti." (I sleep and I work.)
+```
+            S
+        /   |   \
+       S   CONJ   S
+       |    |     |
+      VP   ihuan  VP
+       |          |
+   V_SIMPLE    V_SIMPLE
+  /   |    \   /   |    \
+ Ø   ni  cochi Ø   ni  tequiti
+```
+
+Derivation:
+- S → S CONJ S
+- S → VP NP_OPT NP_OPT PP_OPT CONJ VP NP_OPT NP_OPT PP_OPT
+- S → VP ε ε ε CONJ VP ε ε ε
+- S → V_SIMPLE ihuan V_SIMPLE
+- S → TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX ihuan TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
+- S → Ø ni coch i ihuan Ø ni tequit i
+
 # References
 College of Liberal Arts | The University of Texas at Austin. (s. f.). https://liberalarts.utexas.edu/languages/nahuatl.html#:~:text=Nahuatl%2C%20known%20informally%20as%20Aztec,languages%20are%20indigenous%20to%20Mesoamerica. 
