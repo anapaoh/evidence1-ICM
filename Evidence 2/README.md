@@ -160,5 +160,36 @@ no- + cal + -li
 [Possessive-Prefix:1SG] + [N_root:house] + [Absolutive-Suffix]
 ```
 
+## Now that we understand the rules for the Na'vi grammar we need to create a tree rule for it, the word we are going to use for the grammar are:
+Verbs:
+* nemi - to live, to walk
+* tlacua - to eat
+* cochi - to sleep
+* tequiti - to work
+* chihua - to make, to do
+* temachtia - to teach
+
+Nouns :
+* tlacatl - person, man
+* cihuatl - woman
+* piltzintli - child
+* calli - house
+* atl - water
+* tetl - stone
+* cuahuitl - tree, wood
+* tlaxcalli - tortilla, bread
+* xochitl - flower
+* tepetl - mountain
+* tlamachtilli - student
+* teotl - god, deity
+* tonatiuh - sun
+* metztli - moon
+* cuicatl - song
+
+Conjunctions:
+* ihuan - and
+* auh - but, and
+* intla - if
+
 # References
 College of Liberal Arts | The University of Texas at Austin. (s. f.). https://liberalarts.utexas.edu/languages/nahuatl.html#:~:text=Nahuatl%2C%20known%20informally%20as%20Aztec,languages%20are%20indigenous%20to%20Mesoamerica. 
