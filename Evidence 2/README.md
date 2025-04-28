@@ -44,7 +44,6 @@ Possessive-Prefix → no- | mo- | i- | to- | amo- | in-
 Number-Suffix → -tin | -meh | -h | -Ø
 Absolutive-Suffix → -tl | -tli | -li | -in | -Ø
 ```
-
 ### 2.2 Verb Structure
 ```
 Verb → [Tense-Prefix] + [Subject-Prefix] + [Object-Prefix] + Root + [Directional-Suffix] + [Tense-Suffix]
@@ -62,7 +61,6 @@ Adjective → Root + [Intensifier-Suffix]
 
 Intensifier-Suffix → -tzin | -tontli | -pol
 ```
-
 ## 3. Syntactic Rules
 
 ### 3.1 Basic Sentence Structure
@@ -93,9 +91,7 @@ Question → kuen S | tleika S | kanin S | akiea S | keski S | kenamih S
 ComplexS → S Conj S
 Conj → ihuan | auh | intla | ipampa | moneki
 ```
-
 ## 4. Lexical Categories
-
 ### 4.1 Noun Subcategories
 ```
 N → N_animate | N_inanimate | N_natural | N_abstract
@@ -114,9 +110,7 @@ V_transitive → nemi | cochi | choca | ...
 V_intransitive → mictia | tlazotla | chihua | ...
 V_stative → ca | neci | ...
 ```
-
 ## 5. Incorporation Rules
-
 ### 5.1 Noun Incorporation
 ```
 V_incorporated → [Subject-Prefix] + N_root + V_root + [Tense-Suffix]
@@ -131,9 +125,7 @@ V_applicative → V_root + -lia | -ia | -huia
 ```
 V_causative → V_root + -ltia | -tia
 ```
-
 ## 6. Semantic Features
-
 ### 6.1 Difrasismo (Paired Metaphorical Expressions)
 ```
 Difrasismo → NP Conj NP
@@ -146,9 +138,7 @@ N_reverential → N_root + -tzin | -tzintli
 N_diminutive → N_root + -tontli | -ton
 N_augmentative → N_root + -pol
 ```
-
 ## 7. Sample Derivations
-
 ### 7.1 Simple Sentence
 ```
 "Nitemachtia" (I teach)
