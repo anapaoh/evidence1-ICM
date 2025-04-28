@@ -1,5 +1,5 @@
 ### Evidence 2 ICM
-## Nahuatl 
+# Nahuatl 
 
 
 Nahuatl is an ancient Mexican language that has been spoken since at least the 7th century A.D., playing a significant role in the cultural and historical development of the region. It was the language of the Aztecs, one of the most influential civilizations in pre-Columbian Mesoamerica.
@@ -11,9 +11,9 @@ Today, Nahuatl is spoken by approximately 1.5 million Nahua people, primarily in
 “Varieties of Nahuatl are spoken by an estimated 1.5 million Nahua people, most of whom live in Central Mexico. All Nahuan languages are indigenous to Mesoamerica.”
 _— College of Liberal Arts | The University of Texas at Austin_
 
-##Models
+#Models
 
-# Nahuatl Formal Grammar Specification
+## Nahuatl Grammar Specification
 
 ## 1. Phonological Rules
 
@@ -50,7 +50,7 @@ Absolutive-Suffix → -tl | -tli | -li | -in | -Ø
 Verb → [Tense-Prefix] + [Subject-Prefix] + [Object-Prefix] + Root + [Directional-Suffix] + [Tense-Suffix]
 
 Tense-Prefix → o- | Ø-
-Subject-Prefix → ni- | ti- | Ø- | ti- | an- | Ø-
+Subject-Prefix → ni- | ti- | Ø- | an- 
 Object-Prefix → nech- | mitz- | k(i)- | tech- | amech- | kin-
 Directional-Suffix → -ki | -ka | -kui | -temo | -kiza | -kalaki
 Tense-Suffix → -a | -ya | -ki | -z | -zki
