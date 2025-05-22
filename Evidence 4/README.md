@@ -33,4 +33,3 @@ If a password doesn’t match the pattern, it is considered weak.
 
 The script prints out whether each password is strong or weak.
 
-<pre> **Flow Diagram – Weak Password Detector** +----------------------------+ | Start | +----------------------------+ | v +----------------------------+ | Open file with passwords | +----------------------------+ | v +----------------------------+ | For each password (line): | +----------------------------+ | v +----------------------------+ | Apply regex pattern check | +----------------------------+ | v +------------------+ | Does it match? | +--------+---------+ | +-------+--------+ | | v v +-----------+ +-------------+ | Strong | | Weak | +-----------+ +-------------+ | | +--------+-------+ | v +------------------------+ | Print result | +------------------------+ </pre>
