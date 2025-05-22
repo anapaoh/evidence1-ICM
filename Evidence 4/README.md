@@ -17,17 +17,17 @@ The goal of the script is to check if each password in a file is strong or weak.
 
 - Read the file that contains a list of passwords (one per line).
 
--Use a regular expression to check each password against a pattern.
+- Use a regular expression to check each password against a pattern.
 
-The pattern looks for passwords that:
+- The pattern looks for passwords that:
 
-Are at least 8 characters long
+- Are at least 8 characters long
 
-Include both uppercase and lowercase letters
+- Include both uppercase and lowercase letters
 
-Contain at least one number
+- Contain at least one number
 
-Have at least one special character (like !, @, #, etc.)
+- Have at least one special character (like !, @, #, etc.)
 
 If a password doesn’t match the pattern, it is considered weak.
 
