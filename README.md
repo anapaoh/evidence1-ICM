@@ -34,7 +34,8 @@ Due to theese reasons I used DFA.
 
 MODEL:
 
-![q0](https://github.com/user-attachments/assets/bac08fe0-3ba8-4b0f-94b7-9f9a560b46bc)
+![image](https://github.com/user-attachments/assets/899b19df-9e1c-4cb3-81de-a2b046e36c4e)
+
 
 This is equivalent to the following regular expression:  _k(hala|indjal|iswa|uhar|vetch)_
 
@@ -130,5 +131,18 @@ The automatonCheck/2 function transitions between states using the move/3 predic
 Each symbol in the input list is processed exactly once. Consequently, the time complexity of this function is _O(n)_, where n represents the length of the input word.
 
 ## Comparison
-When I did this evidence I decided to go with the automaton because it was easier for me to understand; however this could also be implemented with regex.
+When I worked on this evidence, I decided to go with the automaton approach because it was easier for me to understand. However, this could also be implemented using regular expressions (regex). If I had used that approach, part of the code would look like this: ``` ('^k(hala|indjal|iswa|uhar|vetch)$' ``` 
 
+```^``` => begining of the word
+```$ ```=> end of the word
+
+The main difference between both approaches is that automata are easier to understand visually, although they require more lines of code due to recursion. On the other hand, regex is more straightforward and compact, but you can't intervene in the process step by step. Regex is also faster, but if the number of valid words grows too much, the expression becomes harder to read and maintain.
+
+For example if you were to add another word in automaton this would be the process
+```
+move(q1, qX, l1).
+move(qX, qY, l2).
+move(qY, qZ, l3).
+move(qZ, f1, l4).
+```
+and in the automaton you would have to add the rest of the word (without the 'K') but if you miss the | or have any sequence problem, it would be harder to identify.
