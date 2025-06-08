@@ -37,39 +37,38 @@ automatonCheck([Symbol | Rest], State) :-
     automatonCheck(Rest, NextState).
 
 /*Test cases*/
-test_kalah:-
-    write('Testing "khala", true'), nl,
+test_khala :-
+    write('Testing "khala", expected: true'), nl,
     go_over_automaton(['k', 'h', 'a', 'l', 'a']).
 
-test_hello:-
-    write('hello'), nl,
-    write('Testinf "hello", false'), nl,
-    go_over_automaton([h, e, l, l, o]).
+test_hello :-
+    write('Testing "hello", expected: false'), nl,
+    go_over_automaton(['h', 'e', 'l', 'l', 'o']).
 
-test_kindjal:-
-    write('Testing "kindjal, true"'), nl,
+test_kindjal :-
+    write('Testing "kindjal", expected: true'), nl,
     go_over_automaton(['k', 'i', 'n', 'd', 'j', 'a', 'l']).
 
-test_kindjal2:-
-    write('Testing "Kindjal", false'), nl,
+test_kindjal2 :-
+    write('Testing "Kindjal", expected: false'), nl,
     go_over_automaton(['K', 'i', 'n', 'd', 'j', 'a', 'l']).
 
-test_kiswa:-
-    write('Testing "kiswa", true'), nl,
+test_kiswa :-
+    write('Testing "kiswa", expected: true'), nl,
     go_over_automaton(['k', 'i', 's', 'w', 'a']).
 
-test_kvilth:-
-    write('Testing "kvilth", false'), nl,
-    go_over_automaton(['K', 'v', 'i', 'l', 't', 'h']).
+test_kvilth :-
+    write('Testing "kvilth", expected: false'), nl,
+    go_over_automaton(['k', 'v', 'i', 'l', 't', 'h']).
 
-test_kuhar:-
-    write('Testing "kuhar", true'), nl,
+test_kuhar :-
+    write('Testing "kuhar", expected: true'), nl,
     go_over_automaton(['k', 'u', 'h', 'a', 'r']).
 
-test_kvetch:-
-    write('Testing "kvetch"'), nl,
+test_kvetch :-
+    write('Testing "kvetch", expected: true'), nl,
     go_over_automaton(['k', 'v', 'e', 't', 'c', 'h']).
 
-test_kvotch:-
-    write('Testing "kvotch", false'), nl,
-    go_over_automaton(['K', 'v', 'o', 't', 'c', 'h']).
+test_kvotch :-
+    write('Testing "kvotch", expected: false'), nl,
+    go_over_automaton(['k', 'v', 'o', 't', 'c', 'h']).
