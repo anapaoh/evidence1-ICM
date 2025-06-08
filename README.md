@@ -128,3 +128,7 @@ The automatonCheck/2 function transitions between states using the move/3 predic
 
 ### Time Complexity
 Each symbol in the input list is processed exactly once. Consequently, the time complexity of this function is _O(n)_, where n represents the length of the input word.
+
+## Comparison
+When I did this evidence I decided to go with the automaton because it was easier for me to understand; however this could also be implemented with regex.
+
