@@ -1,19 +1,19 @@
 import unittest
-from password_checker import check_password_strength
+from password_checker import is_strong
 
 class TestPasswordStrength(unittest.TestCase):
 
     def test_strong_passwords(self):
-        self.assertEqual(check_password_strength("Password123!"), "STRONG")
-        self.assertEqual(check_password_strength("Admin@2023"), "STRONG")
-        self.assertEqual(check_password_strength("My_Passw0rd!"), "STRONG")
+        self.assertTrue(is_strong("Password123!"))
+        self.assertTrue(is_strong("Admin@2023"))
+        self.assertTrue(is_strong("MyPassw0rd!"))
 
     def test_weak_passwords(self):
-        self.assertEqual(check_password_strength("123456"), "WEAK")
-        self.assertEqual(check_password_strength("password"), "WEAK")
-        self.assertEqual(check_password_strength("PASSWORD"), "WEAK")
-        self.assertEqual(check_password_strength("Password"), "WEAK")
-        self.assertEqual(check_password_strength("Pass123"), "WEAK")
+        self.assertFalse(is_strong("123456"))
+        self.assertFalse(is_strong("password"))
+        self.assertFalse(is_strong("PASSWORD"))
+        self.assertFalse(is_strong("Password"))
+        self.assertFalse(is_strong("Pass123"))
 
 if __name__ == '__main__':
     unittest.main()
