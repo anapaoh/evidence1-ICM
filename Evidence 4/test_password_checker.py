@@ -1,16 +1,22 @@
-from password_checker import is_strong
+import re
 
-def test_password_strength():
-    assert is_strong("Password123!") == True
-    assert is_strong("hello123") == False
-    assert is_strong("ABCDabcd!") == False
-    assert is_strong("P@ssw0rd") == True
-    assert is_strong("abc") == False
-    assert is_strong("SuperSecure@1") == True
-    assert is_strong("123456") == False
-    assert is_strong("Qwerty@789") == True
-    assert is_strong("Zxcvb!123") == True
-    print("All tests passed.")
+pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
+
+def check_password_strength(password):
+    if re.match(pattern, password):
+        return "STRONG"
+    else:
+        return "WEAK"
+
+def main():
+    try:
+        with open('passwords.txt', 'r') as file:
+            for line in file:
+                password = line.strip()
+                result = check_password_strength(password)
+                print(f"{password}: {result}")
+    except FileNotFoundError:
+        print("Error: File 'passwords.txt' not found.")
 
 if __name__ == "__main__":
-    test_password_strength()
+    main()
