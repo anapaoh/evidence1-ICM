@@ -34,6 +34,44 @@ If a password doesn’t match the pattern, it is considered weak.
 The script prints out whether each password is strong or weak.
 ![Start](https://github.com/user-attachments/assets/db6c8483-ac57-4f2f-84ad-65cf8647af6f)
 
+Applied as regex sytaxis it would look something like this:
+```
+r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
+```
+
+### Explanation of the paradigm:
+
+As said, this project uses scripting because it is ideal for small tasks that need automation, text processing, or interaction with files and the operating system.
+
+The task involves:
+
+- Reading a simple list of passwords from a text file
+- Checking each password against a pattern
+- Printing whether the password is strong or weak
+
+Since it is a linear, text-processing task with no need for complex data structures or interfaces, scripting is the best option. The reasoning behind this is because:
+
+1. Speed of Development
+Scripting languages like Python allow fast implementation with minimal setup. The program was written in a few lines without needing to define classes, compile code, or build interfaces. This made it easy to focus on solving the problem rather than managing infrastructure.
+
+2. Built-in Tools for Text Processing
+Python has native support for:
+- Regular expressions (via re)
+- File handling (via open() and readlines())
+
+
+3. No Need for Heavy Architecture
+Using paradigms like object-oriented or functional programming would require unnecessary complexity:
+
+- Class definitions
+- State management
+- Abstraction layers
+
+Scripting is straight forward, yet just enough to solve this problem as required.
+
+4. Immediate Execution (No Compilation)
+
+
 #### Analysis
 Time Complexity
 This script reads a list of passwords from a file and checks each one using a regular expression. The analysis of time complexity is as follows:
