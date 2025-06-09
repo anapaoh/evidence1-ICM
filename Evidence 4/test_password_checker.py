@@ -1,22 +1,19 @@
-import re
+import unittest
+from password_checker import check_password_strength
 
-pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$'
+class TestPasswordStrength(unittest.TestCase):
 
-def check_password_strength(password):
-    if re.match(pattern, password):
-        return "STRONG"
-    else:
-        return "WEAK"
+    def test_strong_passwords(self):
+        self.assertEqual(check_password_strength("Password123!"), "STRONG")
+        self.assertEqual(check_password_strength("Admin@2023"), "STRONG")
+        self.assertEqual(check_password_strength("My_Passw0rd!"), "STRONG")
 
-def main():
-    try:
-        with open('passwords.txt', 'r') as file:
-            for line in file:
-                password = line.strip()
-                result = check_password_strength(password)
-                print(f"{password}: {result}")
-    except FileNotFoundError:
-        print("Error: File 'passwords.txt' not found.")
+    def test_weak_passwords(self):
+        self.assertEqual(check_password_strength("123456"), "WEAK")
+        self.assertEqual(check_password_strength("password"), "WEAK")
+        self.assertEqual(check_password_strength("PASSWORD"), "WEAK")
+        self.assertEqual(check_password_strength("Password"), "WEAK")
+        self.assertEqual(check_password_strength("Pass123"), "WEAK")
 
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    unittest.main()
