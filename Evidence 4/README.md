@@ -89,11 +89,52 @@ Alternative Paradigms and Tradeoffs
 1. Scripting Paradigm (used):
 This paradigm is ideal for small, linear automation tasks like this one. It is simple, easy to read, and quick to implement. However, it may become less maintainable in larger or more complex systems.
 
-2. Object-Oriented Programming (OOP):
-This approach could involve creating a Password class with methods like is_strong(). It would provide better structure and modularity, especially if the system were to expand. However, for a short and focused script like this, OOP would introduce unnecessary complexity. Time complexity would still be O(n).
-
-3. Functional Programming:
+2. Functional Programming:
 Functional constructs like map() and filter() could replace loops for processing passwords. This could lead to more concise code but might reduce readability for beginners. It would not change the overall time complexity, which remains O(n).
+
+As a second solution I will be using this paradigm, this because functional programming is based on using pure functions, which always return the same result for the same input and don’t change anything outside of them. Since each password is checked independently, this is a great fit.
+
+In this version:
+
+I used map() and a lambda function to check all passwords without using a traditional for loop.
+
+The is_strong() function is simple and doesn’t change anything outside itself.
+
+The code that checks the passwords is separate from the part that prints the results.
+
+This approach makes the code more organized, easier to test, and less likely to cause bugs from changing shared variables.
+
+```
+import re
+
+# Pure function: returns True if password is strong
+def is_strong(password):
+    pattern = r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$'
+    return re.match(pattern, password) is not None
+
+# Functional approach: maps the password list to classification
+def classify_passwords(passwords):
+    return list(map(lambda pwd: (pwd, "STRONG" if is_strong(pwd) else "WEAK"), passwords))
+
+# Main function (no side effects inside helpers)
+def main():
+    try:
+        with open("password.txt", "r", encoding="utf-8") as file:
+            lines = list(map(str.strip, file.readlines()))
+            results = classify_passwords(lines)
+            print("\nPassword Strength Analysis (Functional):\n")
+            for pwd, result in results:
+                print(f"{result}: {pwd}")
+    except FileNotFoundError:
+        print("File not found.")
+
+if __name__ == "__main__":
+    main()
+
+```
+
 
 4. Concurrent or Parallel Paradigm:
 If processing a large dataset (e.g., millions of passwords), parallelizing the regex checks across multiple threads or processes could improve performance. In such a case, time complexity could approach O(n/p), where p is the number of available processing cores. However, for small to medium-sized files, the overhead of concurrency does not justify the added complexity.
+
+no references needed :)
