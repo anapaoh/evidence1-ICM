@@ -194,14 +194,15 @@ S → S CONJ S                            # Compound sentence
 
 ### 2.2 Noun Phrases (Avoiding Left Recursion)
 ```
-NP → DET N_FORM                         # Determinative noun phrase
-NP → N_FORM                             # Simple noun phrase
-NP_OPT → NP | ε                         # Optional noun phrase
+NP → DET N_FORM
+NP → N_FORM
+NP_OPT → NP | ε
 
-N_FORM → POSS_PREFIX N_STEM             # Possessed noun
-N_FORM → N_STEM                         # Unpossessed noun
-N_STEM → N_ROOT ABS_SUFFIX              # Singular noun
-N_STEM → N_ROOT PLUR_SUFFIX ABS_SUFFIX  # Plural noun
+N_FORM → POSS N_ROOT
+N_FORM → POSS N_ROOT PLUR_SUFFIX
+N_FORM → N_ROOT ABS_SUFFIX
+N_FORM → N_ROOT PLUR_SUFFIX ABS_SUFFIX
+
 ```
 
 ### 2.3 Verb Phrases (Eliminating Ambiguity)
@@ -344,14 +345,14 @@ Derivation:
 ```
 
 Derivation:
-- S → VP NP_OPT NP_OPT PP_OPT
-- S → VP ε ε PP
-- S → V_SIMPLE ε ε PP
-- S → TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX ε ε P NP
-- S → Ø ni tequiti ti ε ε ipan N_FORM
-- S → Ø ni tequiti ti ε ε ipan N_STEM
-- S → Ø ni tequiti ti ε ε ipan N_ROOT ABS_SUFFIX
-- S → Ø ni tequiti ti ε ε ipan cal li
+S → VP NP_OPT NP_OPT PP_OPT
+S → VP ε ε PP
+VP → V_SIMPLE
+V_SIMPLE → TENSE_PREFIX SUBJ_PREFIX V_ROOT
+PP → P NP
+NP → N_FORM
+N_FORM → N_STEM
+N_STEM → N_ROOT ABS_SUFFIX
 
 ### Sentence 6: "Cuix ticochi?" (Do you sleep?)
 ```
@@ -390,12 +391,10 @@ Derivation:
 ```
 
 Derivation:
-- S → S CONJ S
-- S → VP NP_OPT NP_OPT PP_OPT CONJ VP NP_OPT NP_OPT PP_OPT
-- S → VP ε ε ε CONJ VP ε ε ε
-- S → V_SIMPLE ihuan V_SIMPLE
-- S → TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX ihuan TENSE_PREFIX SUBJ_PREFIX V_ROOT VERB_SUFFIX
-- S → Ø ni coch i ihuan Ø ni tequit i
+S → S CONJ S
+S → VP ε ε ε CONJ VP ε ε ε
+VP → V_SIMPLE
+V_SIMPLE → TENSE_PREFIX SUBJ_PREFIX V_ROOT (sin VERB_SUFFIX separado en este caso)
 
 
   ## Analysis of Nahuatl Grammar in Chomsky's Hierarchy
@@ -404,19 +403,24 @@ Derivation:
 
 The Nahuatl grammar as implemented in the code is a **Context-Free Grammar (CFG)** - Level 2 in Chomsky's hierarchy. This is evidenced by:
 
-1. The grammar is defined using NLTK's CFG class
-2. Productions have a single non-terminal on the left-hand side followed by any combination of terminals and non-terminals
-3. Rules like `S -> VP NP_OPT NP_OPT PP_OPT` are typical CFG productions
+The Nahuatl grammar, before removing ambiguity and left recursion, is a Context-Free Grammar (CFG), which is level 2 in Chomsky’s hierarchy.
 
-Key characteristics in the original grammar that make it a CFG:
-- The presence of recursive rules (like compound sentences)
-- The use of epsilon productions (empty/optional elements)
-- Productions dependent solely on the non-terminal being expanded, not the surrounding context
+This is because:
+- It was written using NLTK’s CFG class.
+- Each rule has a single non-terminal on the left-hand side.
+- The right-hand side contains terminals and/or non-terminals, like in: S → VP NP_OPT NP_OPT PP_OPT.
 
-The grammar contains several sources of ambiguity and left recursion:
-- Optional elements (NP_OPT, PP_OPT) create multiple valid derivations
-- Rules like `BASE_S -> VP NP_OPT NP_OPT PP_OPT` could lead to ambiguous parses
-- Potential left recursion in complex noun phrase formations
+Features that make it context-free:
+- Recursive rules (e.g., for combining sentences).
+- Optional elements using ε (empty symbols).
+- All rules depend only on the current symbol being expanded — not on surrounding symbols (no context needed).
+
+Before cleaning the grammar, it contained some **ambiguity** due to optional elements like NP_OPT and PP_OPT, which could lead to multiple valid parse trees for the same sentence.
+
+There was also potential for **left recursion** in more complex noun phrase structures, though not always explicit.
+
+In summary, the grammar was context-free from the beginning, but it included ambiguity and possible left-recursive patterns that needed to be resolved for better parsing.
+
 
 ## Grammar After Eliminating Ambiguity and Left Recursion
 
