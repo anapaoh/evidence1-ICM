@@ -107,3 +107,40 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+
+"""
+Test Documentation:
+
+Example string: ['ni', 'cochi', 'i']
+
+Grammar Rule used:
+S → VP NP_OPT NP_OPT PP_OPT
+VP → V_SIMPLE
+V_SIMPLE → SUBJ_PREFIX V_ROOT VERB_SUFFIX
+SUBJ_PREFIX → 'ni'
+V_ROOT → 'cochi'
+VERB_SUFFIX → 'i'
+
+Parsing Strategy:
+The parser uses a top-down approach via NLTK’s ChartParser (an Earley-style parser).
+This simulates a pushdown automaton by maintaining a chart of states and a stack of rules.
+
+Accepted strings (✓):
+- ['ni', 'cochi', 'i']
+- ['in', 'tlaca', 'tl', 'cochi', 'i']
+- ['ni', 'tlaxcal', 'chihua', 'a']
+
+Rejected strings (✗):
+- ['random', 'invalid', 'sentence']
+- ['ni', 'tlaca', 'tlaxcalli', 'cochi'] (invalid order)
+
+Conclusion:
+The CFG is compatible with pushdown automata behavior and the parser handles both valid and invalid cases.
+"""
+
