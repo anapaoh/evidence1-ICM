@@ -116,7 +116,6 @@ def is_strong(password):
 def classify_passwords(passwords):
     return list(map(lambda pwd: (pwd, "STRONG" if is_strong(pwd) else "WEAK"), passwords))
 
-# Main function (no side effects inside helpers)
 def main():
     try:
         with open("password.txt", "r", encoding="utf-8") as file:
