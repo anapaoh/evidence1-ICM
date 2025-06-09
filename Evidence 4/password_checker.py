@@ -1,7 +1,3 @@
-"""
-This script checks password strength using regex and prints whether each password is strong or weak.
-"""
-
 import re
 
 def is_strong(password):
