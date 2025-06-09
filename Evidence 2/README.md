@@ -15,38 +15,23 @@ _— College of Liberal Arts | The University of Texas at Austin_
 
 ## Nahuatl Grammar Specification
 
-## 1. Phonological Rules
+## 1. Morphological Rules
 
-### 1.1 Phoneme Inventory
+### 1.1 Noun Structure
 ```
-Vowels = {a, e, i, o, ā, ē, ī, ō} // Short and long vowels
-Consonants = {p, t, k, kw, ʔ, s, ʃ, m, n, l, j, w, ts, tɬ, tʃ}
-```
+Noun → Possessive-Prefix Root [Number-Suffix]
+      | Root [Number-Suffix] Absolutive-Suffix 
 
-### 1.2 Syllable Structure
-```
-Syllable → (C)(C)V(C)
-```
-Where C = consonant, V = vowel
-
-### 1.3 Phonological Rules
-- Word-final devoicing: voiced consonants become voiceless at the end of words
-- Vowel harmony: certain suffixes change vowel quality based on the root vowel
-- Stress placement on penultimate syllable
-
-## 2. Morphological Rules
-
-### 2.1 Noun Structure
-```
-Noun → [Possessive-Prefix] + Root + [Number-Suffix] + [Absolutive-Suffix]
 
 Possessive-Prefix → no- | mo- | i- | to- | amo- | in-
 Number-Suffix → -tin | -meh | -h | -Ø
 Absolutive-Suffix → -tl | -tli | -li | -in | -Ø
 ```
-### 2.2 Verb Structure
+### 1.2 Verb Structure
 ```
-Verb → [Tense-Prefix] + [Subject-Prefix] + [Object-Prefix] + Root + [Directional-Suffix] + [Tense-Suffix]
+Verb → Tense-Prefix Subject-Prefix Object-Prefix Root Directional-Suffix Tense-Suffix
+     | Tense-Prefix Subject-Prefix Root Tense-Suffix
+     | Subject-Prefix Root
 
 Tense-Prefix → o- | Ø-
 Subject-Prefix → ni- | ti- | Ø- | an- 
@@ -55,17 +40,20 @@ Directional-Suffix → -ki | -ka | -kui | -temo | -kiza | -kalaki
 Tense-Suffix → -a | -ya | -ki | -z | -zki
 ```
 
-### 2.3 Adjective Structure
+### 1.3 Adjective Structure
 ```
 Adjective → Root + [Intensifier-Suffix]
 
 Intensifier-Suffix → -tzin | -tontli | -pol
 ```
-## 3. Syntactic Rules
+## 2. Syntactic Rules
 
-### 3.1 Basic Sentence Structure
+### 2.1 Basic Sentence Structure
 ```
-S → VP [NP] [NP] [PP]    // VSO basic order
+S → VP NP NP PP
+   | VP NP NP
+   | VP NP
+   | VP
 
 // Noun Phrase
 NP → [Det] [Adj]* N [PP] [RC]
@@ -81,18 +69,18 @@ Adv → niman | zan | ok | kualli | mach
 RC → in V [NP] [NP] [PP]
 ```
 
-### 3.2 Question Formation
+### 2.2 Question Formation
 ```
 Question → kuen S | tleika S | kanin S | akiea S | keski S | kenamih S
 ```
 
-### 3.3 Complex Sentences
+### 2.3 Complex Sentences
 ```
 ComplexS → S Conj S
 Conj → ihuan | auh | intla | ipampa | moneki
 ```
-## 4. Lexical Categories
-### 4.1 Noun Subcategories
+## 3. Lexical Categories
+### 3.1 Noun Subcategories
 ```
 N → N_animate | N_inanimate | N_natural | N_abstract
 
@@ -102,7 +90,7 @@ N_natural → atl | tepetl | citlalli | tonatiuh | ...
 N_abstract → tlazohtlaliztli | nemilyotl | ...
 ```
 
-### 4.2 Verb Subcategories
+### 3.2 Verb Subcategories
 ```
 V → V_transitive | V_intransitive | V_stative
 
@@ -110,22 +98,22 @@ V_transitive → nemi | cochi | choca | ...
 V_intransitive → mictia | tlazotla | chihua | ...
 V_stative → ca | neci | ...
 ```
-## 5. Sample Derivations
-### 5.1 Simple Sentence
+## 4. Sample Derivations
+### 4.1 Simple Sentence
 ```
 "Nitemachtia" (I teach)
 ni- + temachtia
 [Subject-Prefix:1SG] + [V_root:teach]
 ```
 
-### 5.2 Complex Sentence
+### 4.2 Complex Sentence
 ```
 "Nitlakwa ihuan nitlai" (I eat and I drink)
 ni- + tlakwa + ihuan + ni- + tlai
 [Subject-Prefix:1SG] + [V_root:eat] + [Conj:and] + [Subject-Prefix:1SG] + [V_root:drink]
 ```
 
-### 5.3 Noun Possession
+### 4.3 Noun Possession
 ```
 "Nocal" (my house)
 no- + cal + -li
